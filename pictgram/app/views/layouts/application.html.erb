@@ -24,13 +24,13 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to topics_path do %>
                 <%= image_tag "icons/heart.png" %>
               <% end %>
             </li>
             
             <li>
-              <%= link_to "#" do %>
+              <%= link_to new_topic_path do %>
                 <%= image_tag "icons/camera.png" %>
               <% end %>
             </li>

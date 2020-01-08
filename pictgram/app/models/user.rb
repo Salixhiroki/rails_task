@@ -20,4 +20,6 @@ validates :email, format: { with: VALID_EMAIL_REGEX }
 # name => 15文字以下
 validates :name, length: { maximum: 15 }
 
+has_many :topics
+
 end
