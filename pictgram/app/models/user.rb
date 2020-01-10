@@ -13,13 +13,16 @@ validates :password, format: { with: VALID_PASSWORD_REGEX  }
 
 has_secure_password
 
-#email=> ~~@~~.~
+#email => ~~@~~.~
 VALID_EMAIL_REGEX =/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 validates :email, format: { with: VALID_EMAIL_REGEX }
 
 # name => 15文字以下
 validates :name, length: { maximum: 15 }
 
+#user:topics 1 対 多
 has_many :topics
+has_many :favorites
+has_many :favorite_topics, through: :favorites, source: 'topic'
 
 end

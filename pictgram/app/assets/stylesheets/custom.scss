@@ -150,3 +150,14 @@ h1,h2{
     
   }
 }
+
+.favorite{
+  background-color:#FF3366;
+  animation: anime 1s alternate 2;
+}
+
+
+@keyframes anime{
+  0% {transform: rotateY(0deg);}
+  100%{ transform: rotateY(360deg);}
+}

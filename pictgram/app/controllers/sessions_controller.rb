@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(session_params[:password])
       log_in user #log_inメソッドを実行 userを引数として渡す
       redirect_to root_path, success: 'ログインに成功しました'
-       # binding.pry
+        # binding.pry
     else
       flash.now[:danger]='ログインに失敗しました'
       render :new
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    log_out
+    log_out #logoutメソッドを呼び出す
     
     redirect_to root_url, info: 'ログアウトしました'
   end
@@ -23,14 +23,14 @@ class SessionsController < ApplicationController
   private
   def log_in(user)
     session[:user_id]=user.id
-    
   end
   
   def log_out
     session.delete(:user_id)
-    @current_user = nil
+    @current_user = nil #インスタンス変数
   end
   
+  # ストロングパラメータ
   private
   def session_params
     params.require(:session).permit(:email, :password)
