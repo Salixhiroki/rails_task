@@ -148,16 +148,34 @@ h1,h2{
       margin-left: 20px;
     }
     
-  }
+    
+  }    
 }
 
 .favorite{
-  background-color:#FF3366;
-  animation: anime 1s alternate 2;
+      background-color:#FF3366;
+      animation: anime 1s alternate 2;
+      
+      &:hover{
+         opacity: 0.6;
+      }
 }
+
 
 
 @keyframes anime{
   0% {transform: rotateY(0deg);}
   100%{ transform: rotateY(360deg);}
+}
+
+
+.favorites_count{
+  margin-left:10px;
+  display:inline;
+  font-size: 25px;
+}
+
+
+.favorite:active{
+  color:red;
 }
